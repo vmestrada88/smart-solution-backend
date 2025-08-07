@@ -13,7 +13,9 @@ const app = express();
 app.use(cors({
   origin: [
     'http://localhost:3000',
-    'https://smartsolution-frontend-3tm4.vercel.app/'// Reemplaza con tu URL de frontend
+    'http://localhost:5173', // Vite dev server
+    'https://smartsolution-frontend-3tm4.vercel.app',
+    'https://*.vercel.app' // Para otros deployments de Vercel
   ],
   credentials: true
 }));
