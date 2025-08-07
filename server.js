@@ -8,7 +8,16 @@ const cors = require('cors');
 dotenv.config();
 
 const app = express();
-app.use(cors());
+// app.use(cors());
+
+app.use(cors({
+  origin: [
+    'http://localhost:3000',
+    'https://smartsolution-frontend-3tm4.vercel.app/'// Reemplaza con tu URL de frontend
+  ],
+  credentials: true
+}));
+
 app.use(express.json());
 
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
